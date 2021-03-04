@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1 style="margin-left: 120px"> {{ number }} </h1>
+<a href="{% url 'increment' %}" class="btn btn-success"> Increment </a>
+<a href="{% url 'decrement' %}" class="btn btn-warning"> Decrement </a>
+<a href="{% url 'reset' %}" class="btn btn-danger"> Reset </a>
+{% endblock content %}

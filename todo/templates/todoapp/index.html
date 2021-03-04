@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+<form action="{% url 'add' %}" method="POST">
+    {% csrf_token %}
+    <input type="text" name='task'>
+    <input type="submit" value="Add" name="add" class="btn btn-sm btn-success">
+</form>
+
+{% for task in tasks %}
+<p>
+    {{ task.id }}|{{ task.task }}
+    <a href="{% url 'update' task.id %}" class="btn btn-sm btn-warning"> Update </a>
+    <a href="{% url 'delete' task.id %}" class="btn btn-sm btn-danger"> Delete </a>
+</p>
+{% endfor %}
+{% endblock content %}

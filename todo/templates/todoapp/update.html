@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+<p>
+    Edit your task
+</p>
+<form action="{% url 'edit' task.id %}" method="post">
+    {% csrf_token %}
+    <input type="text" value={{task.task}} name="task">
+    <input type="submit" value="update" class="btn btn-sm btn-success" name='update'>
+</form>
+{% endblock content %}
